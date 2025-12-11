@@ -1,0 +1,593 @@
+body{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            background: rgba(0, 0, 0, 0.9);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: rgb(3, 1, 19);
+        }
+        * {
+  color: white;
+  margin: 0px;
+}
+
+        nav{
+        background-color: rgb(0, 0, 0);
+        height: 120px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-sizing: border-box;
+        box-shadow: 0px -20px 40px black;
+        }
+
+        nav .logo{
+            text-decoration: none;
+            height: 100%;
+
+            img{
+                height: 100%;
+            }
+        }
+        nav ul{
+            display: flex;
+            height: 100%;
+            align-items: center;
+            list-style-type: none;
+        }
+
+        nav ul a{
+            text-decoration: none;
+            margin: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            color: white
+
+        }
+
+        nav ul a:hover{
+           color: #ffd000;; 
+        }
+
+        .menu-icon{
+            display: none;
+        }
+
+/* Regras planas para a animação de digitação (evita seletores aninhados inválidos) */
+.apresentacao .line1{
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.apresentacao .fixedText{
+    display: inline-block;
+    margin-right: 6px;
+    position: relative;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.apresentacao .nomeWrapper,
+.apresentacao .nomeWraper{ /* cobre ambas as grafias no HTML */
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden; /* esconde o texto não-digitado */
+}
+
+.apresentacao .nomeCompleto{
+    display: inline-block;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+    white-space: nowrap;
+    width: 0;
+    /* anima largura e cor: invisível fora da digitação, vermelho enquanto mostra */
+    animation: typing 4s steps(21,end) infinite;
+    box-sizing: content-box;
+    position: relative;
+    color: transparent;
+}
+
+.apresentacao .nomeCompleto::after{
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 0;
+    height: 1em;
+    width: 2px;
+    background: #fff; /* cursor claro sobre fundo escuro */
+    animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes typing {
+    /* 0 → 40%: digita (cor transparente -> vermelho);
+       40 → 60%: mantém vermelho; 60 → 100%: apaga (volta a transparente) */
+    0% { width: 0; color: transparent; }
+    40% { width: 21ch; color: #ffd000; }
+    60% { width: 21ch; color: #ffd000; }
+    100% { width: 0; color: transparent; }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* typing for cargo (linha 2) - cobre grafias do wrapper */
+.apresentacao .cargoWraper,
+.apresentacao .cargoWrapper{
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.apresentacao .cargo{
+    display: inline-block;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    font-size: 28px;
+    white-space: nowrap;
+    width: 0;
+    animation: typingCargo 4s steps(23,end) infinite;
+    box-sizing: content-box;
+    position: relative;
+    color: transparent;
+}
+
+.apresentacao .cargo::after{
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 0;
+    height: 1em;
+    width: 2px;
+    background: #fff;
+    animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes typingCargo{
+    0% { width: 0; color: transparent; }
+    40% { width: 23ch; color: #ffd000; }
+    60% { width: 23ch; color: #ffd000; }
+    100% { width: 0; color: transparent; }
+}
+
+
+        .secao1{
+            background-color: rgb(3, 1, 19);
+            margin: 0px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            padding-right: 100px;
+
+            .apresentacao{
+                flex: 1;
+                padding-left: 100px;
+
+
+                .line1{
+                    font-size: 28px;
+                    line-height: 1.2;
+                }
+
+                .fixedText{
+                    display:inline-block;
+                    margin-right:6px;
+                }
+                .nomeWrapper{
+                 display:inline-block;
+                 vertical-align: middle;
+                 overflow: hidden;          /* esconde o texto 'não digitado' */
+                }
+
+                .nomeCompleto{
+                display: inline-block;
+                font-family: "Courier New", Courier, monospace;
+                font-weight: bold;
+                font-size: 40px;
+                white-space: nowrap;
+                width: 0;                  /* começa 'com nada' */
+                /* atenção: ajuste o nº de ch abaixo conforme número de caracteres do nome */
+                /* "Sakaneno Miguel Paulo" tem 21 caracteres (contando espaços) → usamos 21ch */
+                animation: typing 4s steps(21,end) infinite;
+                box-sizing: content-box;   /* garantir que width conte só o texto */
+                position: relative;
+                }
+
+                .nomeCompleto {
+                    display: inline-block;
+                    font-family: "Courier New", Courier, monospace;
+                    font-weight: bold;
+                    font-size: 40px;
+                    white-space: nowrap;
+                    width: 0;                  /* começa 'com nada' */
+                    /* atenção: ajuste o nº de ch abaixo conforme número de caracteres do nome */
+                    /* "Sakaneno Miguel Paulo" tem 21 caracteres (contando espaços) → usamos 21ch */
+                    animation: typing 4s steps(21,end) infinite;
+                    box-sizing: content-box;   /* garantir que width conte só o texto */
+                    position: relative;
+               }
+
+               .nomeCompleto::after{
+                content: "";
+                position: absolute;
+                right: -2px;
+                top: 0;
+                height: 1em;
+                width: 2px;
+                background: #000;
+                animation: blink 0.7s steps(1) infinite;
+               }
+
+            @keyframes typing {
+            0% {
+            width: 0;
+            color: transparent;
+            }
+            /* digitou completamente (meio do ciclo) e mostra em vermelho */
+            50% {
+            width: 21ch;        /* ajuste aqui se mudar o texto */
+            color: red;
+            }
+            /* mantém visível em vermelho por um pouco (entre 50% e 65% por ex) */
+            65% {
+            width: 21ch;
+            color: red;
+            }
+            /* apaga até voltar a 0 e cor fica transparente (invisível enquanto apaga) */
+            100% {
+            width: 0;
+            color: transparent;
+            }
+            }
+                
+            @keyframes blink {
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+            }
+
+            .fixedText{
+                    position: relative;
+                    left: 10px;
+                    margin-right: 10px;
+                    font-size: 20px;
+                    font-weight: bold;
+            }
+
+                .nomeWraper .cargoWraper{
+                    position: relative;
+                    left: 100px;
+                }
+
+                .texto-ap{
+                    margin: 10px;
+                    width: 700px;
+                }
+
+                .elementos{
+                    display: flex;
+                    width: 100%;
+                    margin-left: 10px;
+                    margin-top: 40px;
+                    align-items: center;
+                }
+
+                .botao{
+                    width: 200px;
+                    height: 50px;
+                    background-color: chocolate;
+                    border-radius: 10px;
+                    margin-right: 25px;
+                    font-weight: bold;
+                    font-size: 30px;
+                    box-shadow: 0 0 30px #ff0f80;
+                    border: 3px solid ff0f80;
+                }
+
+                .icones{
+
+                    .fa-brands, .fa-regular{
+                        font-size: 50px;
+                    }
+                }
+            }
+
+            .minha-img{
+                background-color: rgb(3, 1, 19);
+                flex: 1;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    height: 370px;
+                    width: 400px;
+                    border-radius: 50%;
+                    border: 5px solid #ffd000;;
+                }
+            }
+        }
+        .barra1{
+            width: 80%;
+            height: 6px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            margin-left: 70px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            box-shadow: 10px 20px 30px white;
+        }
+
+        
+
+        .secao2{
+            background-color: rgb(3, 1, 19);
+            margin: 0px;
+            width: 100%;
+
+            .ferramentas{
+            display: flex;
+            border: 1px solid white;
+            margin: 10px;
+        }
+
+        .eu{
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        width: 50%;
+        padding: 30px;
+        flex: 1;
+         
+        .euM{
+            display: flex;
+            flex: 1;
+            width: 100%;
+            flex-direction: column;
+        }
+        }
+
+
+        .skills{
+        flex: 1;
+        padding: 30px;  
+        border-left: 1px solid white; 
+
+         .mar{
+         width: 100%;
+         height: 10px;
+         background-color: white;
+         margin-left: 120px;
+         border-radius: 10px;
+
+         .mar1{
+            height: 100%;
+            width: 100%;
+            background-color: #ffd000;
+            border-radius: 10px;
+         }
+         }
+        }
+
+        .let1, .let2{
+            color: #ff0f80;
+            margin-left: 20px;
+        }
+
+
+        .lab{
+            font-weight: bold;
+            font-size: 30px;
+            display: flex; flex-direction: row; align-items: center;
+        }
+        }
+
+
+        .secao3{
+            background-color: rgb(3, 1, 19);
+            height: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
+            display: flex;
+          
+
+            .exp-acad, .exp-pro{
+                box-sizing: border-box;
+                display: flex;
+                flex: 1;
+                min-width: 0;
+            }
+
+            .titu{
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+            .exp-acad{
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                height: 100%;
+                background-color: rgb(8, 3, 48);
+                justify-content: center;
+                align-items: center;
+
+                .acad{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    align-items: center;
+                }
+
+                .acad1, .acad2{
+                    width: 90%;
+                    margin: 10px;
+                    border: 1px solid white;
+                    height: 100px;
+                    box-sizing: border-box;
+                    padding: 5px;
+
+                }
+            }
+
+            .exp-pro{
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                background-color: rgb(8, 3, 48);
+                justify-content: center;
+                align-items: center;
+
+                .pro1, .pro2{
+                    width: 90%;
+                    margin: 10px;
+                    border: 1px solid white;
+                    height: 100px;
+                    box-sizing: border-box;
+                    padding: 5px;
+                }
+            }
+        }
+
+        .secao4{
+            background-color: rgb(3, 1, 19);
+            margin: 0px;
+            height: 400px;
+            width: 100%;
+        }
+
+        .secao5{
+            background-color: rgb(3, 1, 19);
+            margin: 0px;
+            height: 400px;
+            width: 100%;
+            display: flex;
+            box-sizing: border-box;
+
+            .dados{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+
+                input{
+                    width: 300px;
+                    height: 40px;
+                    border-radius: 10px;
+                    border: 5px solid gainsboro;
+                    margin-left: 200px;
+
+                }
+
+                label{
+                    font-size: 25px;
+                    font-weight: bold;
+                    margin-left: 200px;
+                }
+                
+            }
+            form{
+                display: flex;
+                flex: 1;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(3, 1, 19);
+                flex-direction: column;
+
+                textarea{
+                    width: 400px;
+                    height: 220px;
+                    margin-top: 60px;
+                    border-radius: 10px;
+                    border: 5px solid gainsboro;
+                }
+
+                .bot{
+                    width: 200px;
+                    height: 50px;
+                    background-color: chocolate;
+                    border-radius: 10px;
+                    margin-right: 25px;
+                    font-weight: bold;
+                    font-size: 30px;
+                    box-shadow: 0 0 30px #ff0f80;
+                    border: 3px solid ff0f80;
+                    color: #fff;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        footer{
+            background-color: black;
+            display: flex;
+            height: 400px;
+
+            .direitos{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .contatos{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .links-rapidos{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+
+        
+        
+    /*
+    Não esqueça de botar o zap sobre todo o mundo
+    */
+
+    @keyframes pulsar {
+        0%{transform: scale(1);}
+        50%{transform: scale(1.1);}
+        100%{transform: scale(1);}
+    }
+    .zap-icon{
+        width: 70px;
+        height: 70px;
+        background-color: #25D366;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        animation: pulsar 1s infinite;
+        .fa-whatsapp{
+        font-size: 60px;
+        background-color: #25D366;
+
+        }
+    }
