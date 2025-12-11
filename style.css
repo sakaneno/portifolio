@@ -8,11 +8,24 @@ body{
             background-attachment: fixed;
             background-size: cover;
             background-color: rgb(3, 1, 19);
+            overflow-x: hidden;
         }
         * {
   color: white;
   margin: 0px;
 }
+
+        /* Evita que imagens, vídeos e iframes causem overflow horizontal */
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Garante que blocos de texto longos não quebrem o layout horizontalmente */
+        .texto-ap{
+            max-width: 100%;
+        }
 
         nav{
         background-color: rgb(0, 0, 0);
